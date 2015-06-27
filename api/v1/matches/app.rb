@@ -1,20 +1,21 @@
 require 'json'
 
 module Minksy
+  MAXIMUM_NUMBER_OF_IMAGES = 9
   PROBABILITY_RANGE = 0..9
   RESOLUTION = 621
   TOTAL_NUMBER_OF_IMAGES = 13
   URL_PREFIX = 'http://qucentis.com/labs/linksy/images/'
 
   class Matches
-    def initialize(probability_range: PROBABILITY_RANGE, number: nil)
+    def initialize(maximum_number_of_images = MAXIMUM_NUMBER_OF_IMAGES, number = nil)
       @number = number
-      @probability_range = probability_range
+      @maximum_number_of_images = maximum_number_of_images
     end
 
     def to_hash
       indicies.map do |index|
-        {id: index, photo: url(index)}
+        {:id => index, :photo => url(index)}
       end
     end
 
@@ -33,11 +34,11 @@ module Minksy
     end
 
     def sample_by(number)
-      (1..TOTAL_NUMBER_OF_IMAGES).to_a.sample(number)
+      (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle.first(number)
     end
 
     def random_samples
-      (1..TOTAL_NUMBER_OF_IMAGES).to_a.sample(rand(PROBABILITY_RANGE))
+      (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle.first(rand(MAXIMUM_NUMBER_OF_IMAGES))
     end
 
     def url(index)
@@ -54,7 +55,7 @@ module Minksy
       if ARGV.empty?
         puts Matches.new.to_json
       else
-        puts Matches.new(number: ARGV.first.to_i).to_json
+        puts Matches.new(MAXIMUM_NUMBER_OF_IMAGES, ARGV.first.to_i).to_json
       end
     end
 
