@@ -15,7 +15,7 @@ End point                                | Notes
 
 ## Sample JSON format
 
-``` js
+``` json
 [{"id":2,"photo":"http://qucentis.com/labs/linksy/images/621x621/2.jpg"},{"id":11,"photo":"http://qucentis.com/labs/linksy/images/621x621/11.jpg"},{"id":1,"photo":"http://qucentis.com/labs/linksy/images/621x621/1.jpg"}]
 ```
 
