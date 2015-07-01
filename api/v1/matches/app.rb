@@ -42,7 +42,7 @@ module Minksy
     end
 
     def url(index)
-      "#{URL_PREFIX}#{resolution}/#{index}.jpg"
+      "#{URL_PREFIX}#{resolution}/#{index.to_s.rjust(2, '0')}.jpg"
     end
 
     def resolution
