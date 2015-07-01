@@ -14,9 +14,10 @@ module Minksy
     end
 
     def to_hash
-      indicies.map do |index|
-        {:id => index, :photo => url(index)}
-      end
+      {
+        :error => nil,
+        :data => data
+      }
     end
 
     def to_json
@@ -24,6 +25,12 @@ module Minksy
     end
 
     private
+
+    def data
+      indicies.map do |index|
+        {:id => index, :photo => url(index)}
+      end
+    end
 
     def indicies
       if @number.nil?
