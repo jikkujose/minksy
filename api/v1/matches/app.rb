@@ -25,7 +25,7 @@ module Minksy
       Harry
       Tim
       Ryan
-      ].sample
+      ].shuffle[0]
     end
 
     def self.last_name
@@ -39,7 +39,7 @@ module Minksy
       Banerji
       Srivastava
       John
-      ].sample
+      ].shuffle[0]
     end
 
     def self.designation
@@ -55,7 +55,7 @@ module Minksy
         'Tech Evangelist',
         'Intern',
         'System Architect'
-      ].sample
+      ].shuffle[0]
     end
 
     def self.company
@@ -81,11 +81,11 @@ module Minksy
         'UNESCO',
         'British High Commission',
         'Pied Piper'
-      ].sample
+      ].shuffle[0]
     end
 
     def self.age
-      rand(22..33)
+      rand(15) + 20
     end
   end
 
