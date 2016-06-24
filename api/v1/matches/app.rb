@@ -7,6 +7,88 @@ module Minksy
   TOTAL_NUMBER_OF_IMAGES = 13
   URL_PREFIX = 'http://qucentis.com/labs/linksy/images/'
 
+  class FakeData
+    def self.first_name
+      %w[
+      Kiran
+      Arun
+      Nikhil
+      Jendrick
+      Nathan
+      Vimal
+      Sam
+      Nick
+      Joel
+      Shyam
+      Anil
+      Tom
+      Harry
+      Tim
+      Ryan
+      ].sample
+    end
+
+    def self.last_name
+      %w[
+      Verma
+      George
+      Tendulkar
+      Singhaiya
+      Chatterji
+      Malhotra
+      Banerji
+      Srivastava
+      John
+      ].sample
+    end
+
+    def self.designation
+      [
+        'Senior Marketing Head',
+        'Vice President',
+        'Technical Team Lead',
+        'Program Manager',
+        'PR Manager',
+        'Coordinating Officier',
+        'General Manager',
+        'Sales Person',
+        'Tech Evangelist',
+        'Intern',
+        'System Architect'
+      ].sample
+    end
+
+    def self.company
+      [
+        'Google',
+        'Facebook',
+        'Amazon',
+        'Hooli',
+        'DRDO',
+        'ISRO',
+        'Flipkart',
+        'TVS',
+        'General Motors',
+        'Maruti',
+        'Wipro',
+        'Infosys',
+        'Tech Mahindra',
+        'VSSC',
+        'JBL',
+        'MSNBC',
+        'TV18',
+        'BBS',
+        'UNESCO',
+        'British High Commission',
+        'Pied Piper'
+      ].sample
+    end
+
+    def self.age
+      rand(22..33)
+    end
+  end
+
   class Matches
     def initialize(maximum_number_of_images = MAXIMUM_NUMBER_OF_IMAGES, number = nil)
       @number = number
@@ -28,7 +110,15 @@ module Minksy
 
     def data
       indicies.map do |index|
-        {:id => index, :photo => url(index)}
+        {
+          :id => index,
+          :photo => url(index),
+          :designation => FakeData.designation,
+          :company => FakeData.company,
+          :age => FakeData.age,
+          :first_name => FakeData.first_name,
+          :last_name => FakeData.last_name
+        }
       end
     end
 
