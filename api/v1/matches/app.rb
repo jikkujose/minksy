@@ -5,7 +5,7 @@ module Minksy
   PROBABILITY_RANGE = 0..9
   RESOLUTION = 621
   TOTAL_NUMBER_OF_IMAGES = 13
-  URL_PREFIX = 'http://qucentis.com/labs/linksy/images/'
+  URL_PREFIX = 'http://qucentis.net/labs/linksy/images/'
 
   class FakeData
     def self.first_name

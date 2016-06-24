@@ -4,7 +4,7 @@ Project to make Ruby work from a shared hosting provider (say Hostgator) without
 
 # API Documentation
 
-API location: `http://qucentis.com/labs/minksy/api/v1`
+API location: `http://qucentis.net/labs/minksy/api/v1`
 
 ## Matches
 
@@ -16,8 +16,8 @@ End point                         | Notes
 ## Sample JSON format
 
 ``` json
-{"error":null,"data":[{"id":7,"photo":"http://qucentis.com/labs/linksy/images/621x621/07.jpg"},{"id":6,"photo":"http://qucentis.com/labs/linksy/images/621x621/06.jpg"}]}
+{"error":null,"data":[{"id":7,"photo":"http://qucentis.net/labs/linksy/images/621x621/07.jpg"},{"id":6,"photo":"http://qucentis.net/labs/linksy/images/621x621/06.jpg"}]}
 ```
 
-[random]: http://qucentis.com/labs/minksy/api/v1/matches/
-[non_random]: http://qucentis.com/labs/minksy/api/v1/matches/?number=7
+[random]: http://qucentis.net/labs/minksy/api/v1/matches/
+[non_random]: http://qucentis.net/labs/minksy/api/v1/matches/?number=7
