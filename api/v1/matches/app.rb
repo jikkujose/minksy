@@ -134,7 +134,7 @@ module Minksy
       array = []
 
       (0..number).each do |i|
-        array << (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle.sample
+        array << (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle.first
       end
 
       array
