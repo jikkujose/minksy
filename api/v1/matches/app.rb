@@ -133,15 +133,15 @@ module Minksy
     def sample_by(number)
       array = []
 
-      (0..number).each do |i|
-        array << random_index(number)
+      (1..number).each do |i|
+        array << random_set[rand(MAXIMUM_NUMBER_OF_IMAGES)]
       end
 
       array
     end
 
-    def random_index(number)
-      @random_index ||= (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle[rand(number)]
+    def random_set
+      @random_set ||= (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle
     end
 
     def random_samples
