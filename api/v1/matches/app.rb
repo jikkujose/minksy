@@ -131,10 +131,13 @@ module Minksy
     end
 
     def sample_by(number)
-      (0..number)
-        .map do |i|
-        (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle.sample
+      array = []
+
+      (0..number).each do |i|
+        array << (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle.sample
       end
+
+      array
     end
 
     def random_samples
