@@ -134,10 +134,14 @@ module Minksy
       array = []
 
       (0..number).each do |i|
-        array << (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle.first
+        array << random_index(number)
       end
 
       array
+    end
+
+    def random_index(number)
+      @random_index ||= (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle[rand(number)]
     end
 
     def random_samples
