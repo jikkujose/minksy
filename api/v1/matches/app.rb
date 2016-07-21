@@ -131,8 +131,7 @@ module Minksy
     end
 
     def sample_by(number)
-      number
-        .times
+      (0..number)
         .map do |i|
         (1..TOTAL_NUMBER_OF_IMAGES).to_a.shuffle.sample
       end
